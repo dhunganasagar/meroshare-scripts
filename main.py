@@ -23,6 +23,7 @@ def find_accounts_from_csv(user=None):
     return acs
 
 
+
 class Account:
     def __init__(self, user, dp, username, password, crn, pin):
         self.user = user
@@ -41,6 +42,7 @@ class Account:
         """
         capital = next(item for item in constants.CAPITALS if item['code'] == str(dp))
         return capital['id']
+
 
 
 class Issue:
@@ -71,6 +73,7 @@ class Issue:
     @property
     def is_ipo(self):
         return True if self.share_type_name == 'IPO' else False
+
 
     @property
     def is_fpo(self):
